@@ -33,11 +33,23 @@ while lineString:
         
         #extract attributes from the datum header line
         tagID = lineList[0]
-        break
 
-   
+        #get the next line
+        line2String = inputFileObj.readline()
+
+        #parse the line into a list
+        line2Data = line2String.split()
+
+        #get attributes from second line
+        obsLat = line2Data[2]
+        obsLon = line2Data[5]
+        print(tagID, obsLat, obsLon)
+        
+
     #Get the next line
     lineString = inputFileObj.readline()
     
-    #Set code to run only if the line contains the string
+#close the file object
+inputFileObj.close()
+
     
